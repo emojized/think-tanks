@@ -8,6 +8,6 @@ class Bullet extends Phaser.Physics.Arcade.Image {
 
         this.angle = scene.player.angle+90;
         this.setCircle(2, 0, 3);
-        //scene.physics.velocityFromRotation(scene.player.rotation, 500, this.body.velocity);
+        scene.physics.velocityFromRotation(scene.player.rotation, 500, this.body.velocity);
     }
 }
