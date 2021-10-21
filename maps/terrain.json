@@ -22,8 +22,17 @@
  "tileheight":64,
  "tilesets":[
         {
+         "columns":10,
          "firstgid":1,
-         "source":"terrain.tsx"
+         "image":"..\/Tilesheet\/terrainTiles_default.png",
+         "imageheight":256,
+         "imagewidth":640,
+         "margin":0,
+         "name":"terrainTiles_default",
+         "spacing":1,
+         "tilecount":30,
+         "tileheight":64,
+         "tilewidth":63
         }],
  "tilewidth":63,
  "type":"map",
