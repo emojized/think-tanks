@@ -13,6 +13,11 @@ class PlayScene extends Phaser.Scene {
 
     create() {
         this.add.image(400, 300, 'sky');
+		
+		const map = this.make.tilemap({key: 'tilemap'});
+		const tileset = map.addTilesetImage('terrainTiles_default', 'tiles');
+		map.createStaticLayer('Kachelebene 1', tileset);
+		
         this.player = this.physics.add.image(100, 450, 'tank');
         this.player.body.setMaxSpeed(200);
         this.player.setCircle(21, 2, 0);
