@@ -12,7 +12,10 @@ class PlayScene extends Phaser.Scene {
 
 
     create() {
-        this.add.image(400, 300, 'sky');
+       // this.add.image(400, 300, 'sky');
+		
+		 this.cameras.main.setBounds(0, 0, 2520, 2240);
+        this.physics.world.setBounds(0, 0, 2520, 2240);
 		
 		const map = this.make.tilemap({key: 'tilemap'});
 		const tileset = map.addTilesetImage('terrainTiles_default', 'tiles');
@@ -22,7 +25,11 @@ class PlayScene extends Phaser.Scene {
         this.player.body.setMaxSpeed(200);
         this.player.setCircle(21, 2, 0);
 
-        //this.player.setCollideWorldBounds(true);
+		this.cameras.main.startFollow(this.player, true, 0.08, 0.08);
+    
+        this.cameras.main.setZoom(1.2);
+
+        this.player.setCollideWorldBounds(true);
 
         cursors = this.input.keyboard.createCursorKeys();
         spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
