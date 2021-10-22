@@ -27,7 +27,7 @@ class PlayScene extends Phaser.Scene {
 
 		this.cameras.main.startFollow(this.player, true, 0.08, 0.08);
     
-        this.cameras.main.setZoom(1.2);
+        this.cameras.main.setZoom(4);
 
         this.player.setCollideWorldBounds(true);
 
