@@ -18,16 +18,21 @@ class PlayScene extends Phaser.Scene {
         this.physics.world.setBounds(0, 0, 2520, 2240);
 		
 		const map = this.make.tilemap({key: 'tilemap'});
-		const tileset = map.addTilesetImage('terrainTiles_default', 'tiles');
-		map.createStaticLayer('Kachelebene 1', tileset);
+		const tileset = map.addTilesetImage('terrain_set', 'tiles');
+		const treeset = map.addTilesetImage('Trees', 'trees');
+
+
+		map.createLayer('Boden', tileset);
 		
         this.player = this.physics.add.image(100, 450, 'tank');
         this.player.body.setMaxSpeed(200);
         this.player.setCircle(21, 2, 0);
+		
+		map.createLayer('Trees', treeset );
 
 		this.cameras.main.startFollow(this.player, true, 0.08, 0.08);
     
-        this.cameras.main.setZoom(1.2);
+        this.cameras.main.setZoom(4);
 
         this.player.setCollideWorldBounds(true);
 
